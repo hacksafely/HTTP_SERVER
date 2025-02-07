@@ -15,6 +15,7 @@ impl Server {
         }
     }
     fn start(&self) {
-        println!("The server will start listening on: {:?}", &self.addr);
+        println!("The server will start listening on following ip:port: {:?}", &self.addr);
     }
+
 }
