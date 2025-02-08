@@ -1,21 +1,11 @@
+
+use HTTP_SERVER::server::Server;
+use HTTP_SERVER::http::Method;
 fn main() {
-    let server = Server::new("127.0.0.1:80");
+    let get = Method::GET;
+    let delete = Method::DELETE;
+    let post = Method::POST;
+    let put = Method::PUT;
+    let server = Server::new("127.0.0.1:8080");
     server.start();
-}
-#[derive(Debug)]
-struct Server {
-    addr: String,
-}
-
-impl Server {
-
-    fn new<T: Into<String>>(address: T) -> Self {
-        Self {
-            addr: address.into(),
-        }
-    }
-    fn start(&self) {
-        println!("The server will start listening on following ip:port: {:?}", &self.addr);
-    }
-
 }

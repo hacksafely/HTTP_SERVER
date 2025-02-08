@@ -3,4 +3,13 @@ name = "HTTP_SERVER"
 version = "0.1.0"
 edition = "2021"
 
+
+[lib]
+name = "HTTP_SERVER"
+path = "src/lib.rs"
+
+[[bin]]
+name = "HTTP_SERVER"
+path = "src/main.rs"
+
 [dependencies]
