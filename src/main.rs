@@ -6,6 +6,6 @@ fn main() {
     let delete = Method::DELETE;
     let post = Method::POST;
     let put = Method::PUT;
-    let server = Server::new("127.0.0.1:8080");
+    let server = Server::new("192.168.58.4:8080");
     server.start();
 }
