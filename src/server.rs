@@ -1,5 +1,8 @@
 use std::io::Read;
 use std::net::{TcpListener, TcpStream};
+use crate::http::Request;
+use std::convert::TryFrom;
+use std::convert::TryInto;
 #[derive(Debug)]
 pub struct Server {
     addr: String,
@@ -57,6 +60,11 @@ impl Server {
             Ok(message) => {
                 println!("Bytes Received");
                 let bytes = String::from_utf8_lossy(&buffer);
+                match Request::try_from(&buffer[..message]){
+                    Ok(request) => {},
+                    Err(e) => println!("Failed to parse"),
+                }
+                println!("This is the message {}",bytes);
             }
             Err(e)=>{
                 eprintln!("Error {:?}",e);
